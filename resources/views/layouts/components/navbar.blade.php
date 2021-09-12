@@ -1,11 +1,17 @@
 <style>
 .list-menu{
-  opacity: 0;
-  overflow: hidden;
-  transition: 0.2s;
+  position: absolute;
+  z-index: 1;
+  transition: 0.3s;
+  display: none;
+  transform: translateX(-1rem);
 }
-.active{
-  opacity: 1;
+.list-item:hover{
+  filter: brightness(90%);
+}
+.collapse ul li:hover > .list-menu{
+  /* opacity: 1; */
+  display: block;
 }
 </style>
 
@@ -20,15 +26,14 @@
           <li class="nav-item">
             <a class="nav-link active" href="/">Beranda</a>
           </li>
-          <li class="nav-item">
-            <button class="nav-link bg-transparent border-0" id="btn">Tentang Kami</button>
-            <div class="list-menu card position-absolute" id="dropdown" style="width: 10rem;transform:translateX(-1rem); z-index:9;">
-              <ul class="list-group list-group-flush">
-                <a href="/profil/visi-misi" class="text-dark text-decoration-none"><li class="border-0 list-group-item">Visi & Misi</li></a>
-                <a href="/profil/anggota" class="text-dark text-decoration-none"><li class="border-0 list-group-item">Anggota</li></a>
-                <a href="/profil/bidang-kegiatan" class="text-dark text-decoration-none"><li class="border-0 list-group-item">Bidang Kegiatan</li></a>
+          <li class="nav-item" id="btn">
+            <a class="nav-link" href="#">Tentang Kami</a>
+            
+              <ul class="list-menu list-group list-group-flush rounded">
+                <li class="list-item border-0 list-group-item"><a href="/profil/visi-misi" class="text-dark text-decoration-none d-block w-100">Visi & Misi</a></li>
+                <li class="list-item border-0 list-group-item"><a href="/profil/anggota" class="text-dark text-decoration-none d-block w-100">Anggota</a></li>
+                <li class="list-item border-0 list-group-item"><a href="/profil/bidang-kegiatan" class="text-dark text-decoration-none d-block w-100">Bidang Kegiatan</a></li>
               </ul>
-            </div>
             
           </li>
           <li class="nav-item">
@@ -45,11 +50,3 @@
       </div>
     </div>
   </nav>
-
-  <script>
-    let drop = document.querySelector('#dropdown');
-    let toggle = document.querySelector('#btn');
-    toggle.addEventListener('click', function () {
-      drop.classList.toggle('active')
-    })
-  </script>

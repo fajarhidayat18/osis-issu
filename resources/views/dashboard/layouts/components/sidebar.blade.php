@@ -8,13 +8,13 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="{{ url('dashboard/anggota') }}">
+          <a class="nav-link" href="{{ route('member.index') }}">
             <span data-feather="users"></span>
             Anggota
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="{{ url('dashboard/galeri') }}">
+          <a class="nav-link" href="{{ route('gallery.index') }}">
             <span data-feather="image"></span>
             Galeri
           </a>

@@ -6,5 +6,5 @@ use Illuminate\Database\Eloquent\Model;
 
 class Galery extends Model
 {
-    //
+    protected $guarded = ['id'];
 }

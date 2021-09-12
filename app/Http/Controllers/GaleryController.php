@@ -14,7 +14,9 @@ class GaleryController extends Controller
      */
     public function index()
     {
-        return view('dashboard.galery');
+        return view('dashboard.gallery.index', [
+            'galleries' => Galery::all()->last()
+        ]);
     }
 
     /**
@@ -24,7 +26,7 @@ class GaleryController extends Controller
      */
     public function create()
     {
-        //
+        return view('dashboard.gallery.create');
     }
 
     /**

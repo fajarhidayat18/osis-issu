@@ -17,6 +17,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/galeri', function () {
+    return view('galery');
+});
 Route::prefix('profil')->group(function () {
     Route::get('/visi-misi', function () {
         return view('about.visi-misi');
@@ -49,6 +52,6 @@ Route::prefix('dashboard')->middleware('auth')->group(function () {
     Route::get('/', function () {
         return view('dashboard.index');
     });
-    Route::resource('/anggota', MemberController::class);
-    Route::resource('/galeri', GaleryController::class);
+    Route::resource('member', MemberController::class);
+    Route::resource('gallery', GaleryController::class);
 });

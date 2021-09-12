@@ -9,6 +9,9 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
     <title>Osis Componany | @yield('title')</title>
+    <style>
+      .bg-image{position:relative;overflow:hidden;background-repeat:no-repeat;background-size:cover;background-position:50%}
+  </style>
   </head>
   <body>
     @include('layouts.components.navbar')
